@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <div id="root"></div>
+    <script>
+      let fiberNode = null;
+
+      const React = {
+        render: (compoment) => {
+          if (!fiberNode) fiberNode = {};
+          const htmlString = compoment();
+          document.getElementById("root").innerHTML = htmlString;
+        },
+      };
+
+      function useCostomHook() {
+        const [value] = useState(10);
+        return value;
+      }
+
+      function useState(initValue) {
+        fiberNode.state = initValue;
+        //react save this value for component
+        return [initValue, () => {}];
+      }
+
+      function PlayList() {
+        const value = useCostomHook();
+        return "I`m Playlist: " + value;
+      }
+
+      React.render(PlayList);
+    </script>
+  </body>
+</html>
