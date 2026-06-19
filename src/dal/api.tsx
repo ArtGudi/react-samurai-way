@@ -15,7 +15,7 @@ export const getTrack = (trackId: string) => {
     "https://musicfun.it-incubator.app/api/1.0/playlist/tracks/" + trackId,
     {
       headers: {
-        "api-key": "c44f1ebc-1bcb-41cf-b62e-de773858faf5",
+        //"api-key": "c44f1ebc-1bcb-41cf-b62e-de773858faf5",
       },
     },
   ).then((res) => res.json());
@@ -46,7 +46,7 @@ export const getTracks = () => {
     "https://musicfun.it-incubator.app/api/1.0/playlist/tracks/",
     {
       headers: {
-        "api-key": "c44f1ebc-1bcb-41cf-b62e-de773858faf5",
+        //"api-key": "c44f1ebc-1bcb-41cf-b62e-de773858faf5",
       },
     },
   ).then((res) => res.json());
